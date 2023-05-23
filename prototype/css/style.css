@@ -1,0 +1,41 @@
+/* 폰트 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700&display=swap");
+
+
+
+/* 컨테이너 */
+.container{
+    max-width:1000px;
+    border: 1px solid rgb(197, 156, 156);
+    margin: 0 auto;
+    
+}
+
+.row{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+}
+
+/* 헤더 */
+#header .logo {
+  line-height: 2;
+  font-size: 28px;
+  font-weight: 700;
+  color: rgb(000, 000, 000);
+  font-family: Noto + Sans + KR;
+}
+
+#header .menu{
+    height: 40px;
+    line-height: 1.75;
+    font-weight: 700;
+    color:#fff;
+    font-size: 20px;
+    background-color: #000;
+    width: 40px;
+    border-radius: 50px;
+}
+
