@@ -9,7 +9,7 @@ $(document).ready(function () {
   })
   $('.al_music').slick({
     variableWidth: true,
-    slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -32,4 +32,12 @@ document.querySelector('.close_btn').addEventListener('click',()=>{
   document.querySelector('.menu-slide').classList.toggle('menu-show');
 })
 
+
+
+
+/* -------------------------------------------------------------------- */
+
+const daMusic = document.querySelector('.da_music');
+const alMusic = document.querySelector('.al_music');
+const 
 
