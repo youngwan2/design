@@ -1,11 +1,18 @@
 /* 폰트 */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700&display=swap");
 
+
+
 /* --------------------헤더 영역 start */
 /* row의 부모 컨테이너 */
 .container {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 로고와 메뉴 아이콘의 부모 컨테이너 */
@@ -18,17 +25,22 @@
   margin: 0 20px;
 }
 
-
 #header {
+  z-index: 101;
   height: 50px;
 }
 /* 헤더의 로고 */
 #header .logo {
+  cursor: pointer;
   line-height: 1.5;
   font-size: 30px;
   font-weight: 700;
-  text-shadow: 2px 2px 5px;
+}
+
+#header .logo a {
+  text-decoration: none;
   color: rgba(26, 221, 114, 0.651);
+  text-shadow: 2px 2px 5px;
 }
 
 /* 헤더의 메뉴 */
@@ -46,6 +58,7 @@
   text-align: center;
   width: 40px;
   border-radius: 50px;
+  cursor: pointer;
 }
 
 #header {
@@ -53,27 +66,118 @@
   background-color: black;
 }
 
+.close_btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 /* 헤더 end */
 
 /* -------------메인 영역 start */
 
-.music h2{
-  margin: 15px 10px;
+/* see all */
+
+.all_icon {
+  display: block;
+  float: right;
+  font-weight: 700;
+  position: relative;
+  bottom: 30px;
+  right: 10px;
+  font-size: 1.05em;
+  color: green;
+}
+
+.music h2 {
+  margin: 25px 10px 15px 10px;
   font-weight: 700;
   font-size: 1.5rem;
   color: rgb(31, 197, 45);
   text-shadow: 0 0 8px rgb(31, 197, 45);
 }
 
-
 /* 데일리 뮤직 */
-.da_music .da_img{
-  display: inline;
+.da_music .da_img {
+  float: left;
+  position: relative;
 }
-
 
 /* 앨범 뮤직 */
-.al_music .al_img{
-  display: inline;
+.album {
+  position: relative;
+  top: 1rem;
 }
 
+.al_music .al_img {
+  float: left;
+  margin: 3px;
+}
+
+.al_tit {
+  margin-bottom: 10px;
+}
+.al_tit .al_title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.al_tit .al_desc {
+  font-size: 16px;
+}
+
+/* 헤더의 메뉴 로고 클릭 시 보이는 메뉴 */
+/* 슬라이드 메뉴를 감추기 위한 초기 상태 설정 */
+.menu-slide {
+  transform: translateX(500px) translateY(0);
+  position: absolute;
+  transition: 0.5s;
+  right: 0;
+  opacity: 0;
+  top: 0;
+  z-index: 100;
+  width: 300px;
+  height: 100%;
+  background-color: black;
+}
+
+:is(.menu-slide, .menu-show) ul{
+  margin-top: 3.5rem;
+}
+
+/* 슬라이드 메뉴가 나타날 때 애니메이션 효과 설정 */
+.menu-show {
+  opacity: 1;
+  box-shadow: 2px 2px 15px 3px black;
+  transform: translateX(0%) translateY(0);
+  z-index: 100;
+  right: 0;
+  top: 0;
+  transition: transform 0.3s ease-in-out;
+  position: absolute;
+  width: 300px;
+  height: 100%;
+  background-color: rgba(61, 170, 110, 0.877);
+}
+
+:is(.menu-slide, .menu-show) ul li {
+  margin: 20px 10px 10px 10px;
+  
+  line-height: 1.5;
+  font-size: 1;
+}
+
+.menu-show ul li:hover a {
+  color: greenyellow;
+}
+
+:is(.menu-slide, .menu-show) ul li a {
+  text-decoration: none;
+  color: white;
+  margin-left: 0.5rem;
+}
